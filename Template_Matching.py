@@ -22,5 +22,6 @@ for pt in zip(*loc2[::-1]):
     if pt[1] < 437:
         cv2.rectangle(img_rgb, pt, (pt[0] + w, pt[1] + h), (0, 0, 255), 2)
 
+cv2.imwrite("result.png", img_rgb)
 cv2.imshow('Detected', img_rgb)
 cv2.waitKey(0)

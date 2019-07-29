@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fb16870f-64bd-499a-9c5d-d85ec77adc01" name="Default Changelist" comment="" />
+    <list default="true" id="fb16870f-64bd-499a-9c5d-d85ec77adc01" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/result.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Template_Matching.py" beforeDir="false" afterPath="$PROJECT_DIR$/Template_Matching.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,8 +20,13 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1OhOSasIabmhII5DbjU4RIIHXgj" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.completion" />
   </component>
@@ -37,7 +47,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.minimal">
+  <component name="RunManager" selected="Python.Template_Matching">
     <configuration name="Template_Matching" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Scrabble Solver" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -82,8 +92,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.minimal" />
         <item itemvalue="Python.Template_Matching" />
+        <item itemvalue="Python.minimal" />
       </list>
     </recent_temporary>
   </component>
@@ -100,12 +110,23 @@
     </task>
     <servers />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Template_Matching.py</url>
-          <line>25</line>
+          <line>26</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
