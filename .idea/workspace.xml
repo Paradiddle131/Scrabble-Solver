@@ -2,11 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb16870f-64bd-499a-9c5d-d85ec77adc01" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/Scrabble Solver.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Scrabble Solver.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sandbox/minimal.py" beforeDir="false" afterPath="$PROJECT_DIR$/Sandbox/minimal.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game_screen.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sandbox/Write/detected_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/Sandbox/Write/detected_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sandbox/Write/detected_g.png" beforeDir="false" afterPath="$PROJECT_DIR$/Sandbox/Write/detected_g.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sandbox/Write/detected_g_circles.png" beforeDir="false" afterPath="$PROJECT_DIR$/Sandbox/Write/detected_g_circles.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sandbox/board_with_offset.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Sandbox/board_with_offset.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sandbox/color_detection.py" beforeDir="false" afterPath="$PROJECT_DIR$/Sandbox/color_detection.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sandbox/sandbox2.py" beforeDir="false" afterPath="$PROJECT_DIR$/Sandbox/sandbox2.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,7 +34,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="PyDebuggerOptionsProvider">
     <option name="mySupportGeventDebugging" value="true" />
@@ -264,6 +266,21 @@
           <url>file://$PROJECT_DIR$/Sandbox/find_letters.py</url>
           <line>34</line>
           <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Sandbox/color_detection.py</url>
+          <line>66</line>
+          <option name="timeStamp" value="45" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Sandbox/color_detection.py</url>
+          <line>123</line>
+          <option name="timeStamp" value="46" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Sandbox/color_detection.py</url>
+          <line>58</line>
+          <option name="timeStamp" value="47" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

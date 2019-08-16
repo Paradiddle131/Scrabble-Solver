@@ -1,3 +1,4 @@
+import math
 import sys
 import cv2
 import imutils
@@ -21,7 +22,7 @@ def showArrayImage(array, filename):
 
 
 np.set_printoptions(threshold=sys.maxsize)
-image = cv2.imread("game_ss2_2.png")[86:486]
+image = cv2.imread("game_ss2.png")[96:476]
 boundaries = [
     ([255, 255, 255], [255, 255, 255]),
     # ([82, 56, 255], [189, 180, 255])
@@ -33,7 +34,7 @@ for i, (lower, upper) in enumerate(boundaries):
 
     mask = cv2.inRange(image, lower, upper)
     output = cv2.bitwise_and(image, image, mask=mask)
-    # cv2.imwrite('Write/detected_0{}.png'.format(i), np.hstack([image, output])[:, 466:])
+    # cv2.imwrite('Write/detected_{}.png'.format(i), np.hstack([image, output])[:, 466:])
     # cv2.imshow("images", np.hstack([image, output])[:, 466:])
     # cv2.waitKey(0)
 
@@ -47,58 +48,119 @@ mask = np.ones(image.shape[:2], dtype="uint8") * 255
 
 white = 255
 black = 0
-im = Image.open('Write/detected_0.png')
+# im = Image.open('Write/detected_0.png')
 
-longestH, longestV, CountConsecutive = [0]*3
-board = np.zeros((40, 46)).astype(int)
+longestH, longestV, CountConsecutive = [0] * 3
+board = np.zeros((38, 46)).astype(int)
+
+
 def searchBoxes():
-    count, countW, countB, horizontal, vertical, L, countL, countH = [0] * 8
-    for y in range(24, len(gray), 32):  # y = 460
-        for x in range(5, len(gray[0]), 32):  # y = 400
+    yo, xo = calibrate()
+    count, countW, countB, horizontal, vertical, L, countL, countH, currentB = [0] * 9
+    for y in range(yo, len(gray), 35):  # y = 380  13 offset
+        for x in range(xo, len(gray[0]), 35):  # y = 400 5 offset
             try:
-                #region Count Blocks
-                L = 0
-                # cv2.circle(img=gray, center=(x, y), radius=1, color=(255, 0, 0), thickness=3)
+                # region Count Blocks
+                L, currentB = [0] * 2
+                # region Draw Grid Circle
+                if gray[y][x] == 0:
+                    cv2.circle(img=gray, center=(x, y), radius=1, color=(255, 0, 0), thickness=3)
+                elif gray[y][x] == 255:
+                    cv2.circle(img=gray, center=(x, y), radius=1, color=(0, 0, 0), thickness=3)
+                # endregion
                 for a in range(-16, 16):
                     p = gray[y][x + a]
-                    L += p
+                    if -3 < a < 3 and p == 0:
+                        currentB += 1
+                    L += int(p / 255)
                     if p == 0:
                         countB += 1
-                if L > 255 * 14:
+                if L > 14:
                     countW += 1
                     board[round(y / 10)][round(x / 10)] = 1
-                if 255 * 1 < L < 255 * 22 and not (gray[y][x + 13] == 255 and gray[y][x - 15] == 255 and gray[y][x] == 0):
-                    countL += 1
-                    board[round(y / 10)][round(x / 10)] = 2
-                if gray[y][x + 13] == 255 and gray[y][x - 15] == 255 and gray[y][x] == 0:
+                # if 1 < L < 22 and not (
+                #         gray[y][x + 14] == 255 and gray[y][x - 18] == 255):
+                #     countL += 1
+                #     board[round(y / 10)][round(x / 10)] = 2
+                # if gray[y][x + 13] == 255 and gray[y][x - 15] == 255 and gray[y][x] == 0:
+                if 2 < L < 6 and gray[y][x] == 0 and (currentB == 5):
                     countH += 1
                     board[round(y / 10)][round(x / 10)] = 3
-                #endregion
-                #region Count Consecutive Blocks
+                # endregion
+                # region Count Consecutive Blocks
 
-                #endregion
+                # endregion
             except:
                 pass
-    #region Print
+    # region Print
     print("Boxes: ", countW)
-    print("Letters:", countL)
+    # print("Letters:", countL)
     print("Hearts:", countH)
-    #endregion
+    # endregion
 
-# def calibrate():
-#     try:
-#         for y in range(0, len(gray), 32):
-#             for x in range(0, len(gray), 32):
-#                if gray[y][x] == 255:
-#
-#     except:
-#         pass
+
+def calibrate():
+    cx, cy, nx, ny = [0] * 4
+    countWH, countWV = [1] * 2
+    try:
+        for y in range(0, len(gray)):
+            for x in range(0, len(gray)):
+                tx, ty = x, y
+                if gray[y][x] == 255:
+                    while gray[y][x + 1] != 0:
+                        x += 1
+                    while gray[y][x - 1] != 0:
+                        x -= 1
+                        countWH += 1  # 33
+                    cx = int(math.ceil(countWH / 2))  # x + 16
+                    nx = x + cx
+                    while gray[y + 1][nx] != 0:
+                        y += 1
+                    while gray[y - 1][nx] != 0:
+                        y -= 1
+                        countWV += 1  # 33
+                    cy = int(math.ceil(countWV / 2))
+                    ny = y + cy
+                    return ny - ty, nx - tx  # (-3, 1)
+    except:
+        pass
+
+
+# print(calibrate())
 searchBoxes()
-writeArrayTxt(board, "board_with_offset")
-showArrayImage(board, "board_with_offset")
-cv2.imwrite('Write/detected_g.png', gray)
+# writeArrayTxt(board, "board_with_offset")
+# showArrayImage(board, "board_with_offset")
+cv2.imwrite('Write/detected_g2.png', gray)
 # cv2.imshow("gray", gray)
 # cv2.waitKey(0)
 # game_ss    W:27 L:9 H:1
 # game_ss2   W:31 L:0 H:1
 # game_ss2_2 W:25 L:6 H:1
+
+
+
+# def calibrate():
+#     cx, cy, nx, ny = [0] * 4
+#     countWH, countWV = [1] * 2
+#     try:
+#         for y in range(0, len(gray), 35):
+#             for x in range(0, len(gray), 35):
+#                 tx, ty = x, y
+#                 if gray[y][x] == 255:
+#                     while gray[y][x + 1] != 0:
+#                         x += 1
+#                     while gray[y][x - 1] != 0:
+#                         x -= 1
+#                         countWH += 1  # 33
+#                     cx = int(math.ceil(countWH / 2))  # x + 16
+#                     nx = x + cx
+#                     while gray[y + 1][nx] != 0:
+#                         y += 1
+#                     while gray[y - 1][nx] != 0:
+#                         y -= 1
+#                         countWV += 1  # 33
+#                     cy = int(math.ceil(countWV / 2))
+#                     ny = y + cy
+#                     return ny - ty, nx - tx  # (-3, 1)
+#     except:
+#         pass
