@@ -1,0 +1,16 @@
+STEPS FOR AUTOMATION:
+ ✔ Enter Daily Puzzle @done (19-08-17 18:53)
+ ✔ Locate the game board @done (19-08-18 12:40)
+ ✔ GET GIVEN LETTERS @done (19-08-18 20:07)
+   ✔ Do correct thresholing @done (19-08-18 20:07)
+   ✔ Do OCR each of one? @done (19-08-18 20:07)
+ ☐ LEARN THE LETTER COLOR
+   ☐ click and hold on black letter
+   ☐ check and note the color at that coordinate
+ ☐ CHARACTER RECOGNITION:
+   ☐ detect 6 letters and note on a []
+   ☐ detect found letters and note on a [] and make it updated
+ ☐ CALL find_word METHOD
+   ☐ pass length of longest word
+   ☐ pass given letters
+   ☐ pass revealed letters
