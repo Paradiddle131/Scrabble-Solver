@@ -8,22 +8,26 @@ from Word_Finding.find_word import *
 import numpy as np
 import sys
 
+# region Configuration
 np.set_printoptions(threshold=sys.maxsize)
 p.PAUSE = 1
 p.FAILSAFE = True
-
-btn_daily_puzzle = p.locateOnScreen('Assets/daily_puzzle_button.png')
-block_empty = p.locateOnScreen("Assets/squareT.png")
+# endregion
+# region Initialization
 home_button = "Assets/home_button.png"
 img_path = "Assets/board.png"
 board_prev_path = "Assets/board_prev.png"
 board, board_prev = [None] * 2
-x, y = [0] * 2
+x, y, x_l, y_l = [0] * 4
+dict_letter_center_locations, dict_letter_color_locations = ({} for i in range(2))
 
+
+# endregion
 
 def set_gameboard():
-    global board
+    global board, x, y, x_l, y_l
     x, y = tuple(map(operator.add, p.locateOnScreen(home_button)[:2], (0, 100)))
+    x_l, y_l = x + 94, y + 412
     board_prev = board
     board = p.screenshot(region=(x, y, 447, 670))
     # board.show()
@@ -32,56 +36,33 @@ def set_gameboard():
         board_prev.save(board_prev_path)
 
 
-# display(board)
+def locate_letters():
+    global dict_letter_center_locations, dict_letter_color_locations
 
+    dict_letter_center_locations = dict(
+        [
+            (1, (x_l + 120, y_l + 35)),
+            (2, (x_l + 50, y_l + 70)),
+            (3, (x_l + 194, y_l + 70)),
+            (4, (x_l + 40, y_l + 145)),
+            (5, (x_l + 210, y_l + 140)),
+            (6, (x_l + 85, y_l + 205)),
+            (7, (x_l + 165, y_l + 200))
+        ]
+    )
 
-def display(img):
-    plt.imshow(img)
-    plt.show()
+    dict_letter_color_locations = dict(
+        [
+            (1, (x_l + 120 - 30, y_l + 35)),
+            (2, (x_l + 50 - 30, y_l + 70)),
+            (3, (x_l + 194 - 30, y_l + 70)),
+            (4, (x_l + 40 - 30, y_l + 145)),
+            (5, (x_l + 210 - 30, y_l + 140)),
+            (6, (x_l + 85 - 30, y_l + 205)),
+            (7, (x_l + 165 - 30, y_l + 200))
+        ]
+    )
 
-
-def enterDailyPuzzle():
-    p.click(p.center((p.locateOnScreen('Assets/daily_puzzle_button.png'))))
-
-
-# def calibrate():
-#
-#     return x, y
-
-
-dict_letter_locations = {
-    "first": "{},{},{},{}".format(1166, 563, 55, 50),
-    "second": "{},{},{},{}".format(1240, 606, 55, 50),
-    "third": "{},{},{},{}".format(1240, 694, 55, 50),
-    "fourth": "{},{},{},{}".format(1166, 737, 55, 50),
-    "fifth": "{},{},{},{}".format(1087, 693, 55, 50),
-    "sixth": "{},{},{},{}".format(1087, 605, 55, 50)
-}
-
-dict_letter_center_locations = dict(
-    [
-        (1, (x + 215, y + 445)),
-        (2, (x + 290, y + 490)),
-        (3, (x + 290, y + 580)),
-        (4, (x + 215, y + 625)),
-        (5, (x + 140, y + 580)),
-        (6, (x + 140, y + 490))
-    ]
-)
-
-dict_letter_color_locations = dict(
-    [
-        (1, (x + 215 - 30, y + 445)),
-        (2, (x + 290 - 30, y + 490)),
-        (3, (x + 290 - 30, y + 580)),
-        (4, (x + 215 - 30, y + 625)),
-        (5, (x + 140 - 30, y + 580)),
-        (6, (x + 140 - 30, y + 490))
-    ]
-)
-
-
-# board: (990, 146) first letter: 215, 445
 
 def detectLetterColor():
     # first, second, third, fourth, fifth, sixth =
@@ -95,64 +76,69 @@ def detectLetterColor():
     return color_letter
 
 
-# calibrate()
-
-# def findGivenLetters():
-#     x, y = tuple(map(operator.add, calibrate(), (80, 400)))
-#     blacks = list(p.locateAllOnScreen("Assets/letter_black.png"))
-#     for black in blacks:
-#         # print(black[0])
-#         if x < black[0] < x + 250 and y < black[1] < y + 250:
-#             print(black)
-
-
-img_given_letters = mpimg.imread(img_path)[412:660, 94:342]
+def play(order, length):
+    for i in range(1, length + 1):
+        try:
+            x, y = get_value_by_key(dict_letter_center_locations, order[i - 1][0])[0]
+        except:
+            x, y = get_value_by_key(dict_letter_center_locations, order[i - 1])[0]
+        p.moveTo(x, y)
+        p.mouseDown()
+        # compare(board_prev_path, img_path)
+    p.mouseUp()
 
 
-def snap_ocr(x1, y1, x2, y2):
-    pass
-
-
-possible_words = []
-given_letters = ""
-
-
-def ocr(path):
-    # get_letters(path, "given_letters")
-    get_letters(path, "revealed_letters")
-
-
-def play():
-    # compare(board_prev_path, img_path)
-    pass
-
-
-def getKeysByValue(dictOfElements, valueToFind):
-    listOfKeys = list()
-    listOfItems = dictOfElements.items()
-    for item in listOfItems:
+# region Dictionary Operations
+def get_keys_by_value(dictOfElements, valueToFind):
+    listOfKeys = []
+    for item in dictOfElements.items():
         if item[1] == valueToFind:
             listOfKeys.append(item[0])
     return listOfKeys
 
 
+def get_value_by_key(dict, key):
+    values = []
+    for item in dict.items():
+        if item[0] == key:
+            values.append(item[1])
+    return values
+
+
+# endregion
+
 def pick_letters(words, dict):
     order = []
     for word in words:
         for i in range(len(word)):
-            order.append(getKeysByValue(dict, word[i]))
+            order.append(get_keys_by_value(dict, word[i]))
     print(order)
+    return order
+
+
+def remove_duplicates_from_order(order):
+    locs = []
+    for item in order:
+        if len(item) > 1:
+            indices = [i for i, x in enumerate(order) if x == item]
+            if not locs.__contains__(indices):
+                locs.append(indices)
+    for num in locs:
+        order[num[0]] = order[num[0]][0]
+        order[num[1]] = order[num[1]][1]
+    return order
 
 
 def main():
+    possible_words = []
     set_gameboard()
-    # detectLetterColor()
-    # ocr(img_path)
+    locate_letters()
     given_letters = get_letters(img_path, "given_letters")
     possible_words.append(complete_word(['_' * len(x) for x in given_letters], given_letters))
-    print(possible_words[0])
-    # get_single_letters_locations()
-    pick_letters(possible_words[0], get_single_letters_locations())
+    print("possible_words: ", possible_words[0])
+    order = pick_letters(possible_words[0], get_single_letters_locations(len(given_letters)))
+    order = remove_duplicates_from_order(order)
+    play(order, len(given_letters))
 
 
 main()

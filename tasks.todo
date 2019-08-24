@@ -15,11 +15,11 @@ STEPS FOR AUTOMATION:
    ✔ pass length of longest word @done (19-08-24 14:07)
    ✔ pass given letters @done (19-08-24 13:29)
    ☐ pass revealed letters
- ☐ LETTER LOCATIONS AND NUMBERS
-   ☐ find the given letters' locations 
-   ☐ set them in order from 1 through 6
- ☐ ACTION
-   ☐ play the move by dragging
+ ✔ LETTER LOCATIONS AND NUMBERS @done (19-08-24 15:44)
+   ✔ find the given letters' locations @done (19-08-24 14:37)
+   ✔ set them in order from 1 through 6 @done (19-08-24 15:44)
+ ✔ ACTION @done (19-08-24 23:23)
+   ✔ play the move by dragging @done (19-08-24 23:23)
  ☐ IMAGE DIFFERENCE
    ☐ save both previous and current board states
    ☐ find recently found word using find_difference.py

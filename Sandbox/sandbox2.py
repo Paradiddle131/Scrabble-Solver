@@ -1,5 +1,5 @@
 import numpy as np
-
+import  collections
 #
 # a = "SERAKESIR"
 # print(a.__contains__("SERAR"))
@@ -70,6 +70,7 @@ six = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
+
 # unique, counts = np.unique(oneShort, return_counts=True)
 # dictCount = dict(zip(unique, counts))
 # print(dictCount)
@@ -108,6 +109,19 @@ six = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
 # print(d)
 
 
+# def getKeysByValue(dictOfElements, valueToFind):
+#     listOfKeys = list()
+#     listOfItems = dictOfElements.items()
+#     for item in listOfItems:
+#         if item[1] == valueToFind:
+#             listOfKeys.append(item[0])
+#     return listOfKeys
+#
+# dc = {'1': 'M', '2': 'A', '3': 'S', '4': 'T', '5': '', '6': 'H', '': 'İ'}
+#
+# print(getKeysByValue(dc, '')[0])
+
+
 def getKeysByValue(dictOfElements, valueToFind):
     listOfKeys = list()
     listOfItems = dictOfElements.items()
@@ -116,6 +130,58 @@ def getKeysByValue(dictOfElements, valueToFind):
             listOfKeys.append(item[0])
     return listOfKeys
 
-dc = {'1': 'M', '2': 'A', '3': 'S', '4': 'T', '5': '', '6': 'H', '': 'İ'}
 
-print(getKeysByValue(dc, '')[0])
+def get_value_by_key(dict, key):
+    values = []
+    for item in dict.items():
+        if item[0] == key:
+            values.append(item[1])
+    return values
+
+
+x, y = 981, 142
+dict_letter_center_locations = dict(
+    [
+        (1, (x + 120, y + 35)),
+        (2, (x + 50, y + 70)),
+        (3, (x + 194, y + 70)),
+        (4, (x + 40, y + 145)),
+        (5, (x + 210, y + 140)),
+        (6, (x + 85, y + 205)),
+        (7, (x + 165, y + 200))
+    ]
+)
+
+# print(dict_letter_center_locations.items())
+# print(get_value_by_key(dict_letter_center_locations, 6))
+# print(get_value_by_key(dict_letter_center_locations, 6)[0])
+# print(get_value_by_key(dict_letter_center_locations, 6)[0][0])
+# print(get_value_by_key(dict_letter_center_locations, 6)[0][1])
+
+
+order = [[6], [4, 7], [2, 3], [4, 7], [5], [2, 3], [1]]
+
+print(order)
+print(order[0])
+print(order[0][0])
+print(order[1])
+print(order[1][1])
+
+print(list(enumerate(order)))
+print(order.index([5]))
+print("_______________________")
+locs = []
+for item in order:
+    if len(item) > 1:
+        indices = [i for i, x in enumerate(order) if x == item]
+        if not locs.__contains__(indices):
+            locs.append(indices)
+
+print(locs)
+
+for num in locs:
+    order[num[0]] = order[num[0]][0]
+    order[num[1]] = order[num[1]][1]
+print(order)
+
+

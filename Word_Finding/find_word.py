@@ -1,12 +1,18 @@
+# https://github.com/first20hours/google-10000-english
+def load_words():
+    with open('../Word_Finding/words_alpha.txt') as word_file:
+        valid_words = set(word_file.read().split())
+    return valid_words
+
+
 def complete_word(revealed_letters, given_letters):
-    dictionary = open("../Word_Finding/Turkish_dictionary.txt", "r", encoding="utf-8")
-    all_words = dictionary.read()
+    all_words = load_words()
     length_revealed_letters = len(revealed_letters)
     list_given_letters = list(given_letters)
     total_letters = len(given_letters)
     picked_words, result = ([] for i in range(2))
     count = 0
-    for word in all_words.split("\n"):
+    for word in all_words:
         word_temp = word
         list_revealed_letters2 = list_given_letters.copy()
         for letter in list_given_letters:
@@ -31,32 +37,4 @@ def complete_word(revealed_letters, given_letters):
     return result
 
 
-# print(complete_word("g__z_", "mzgae"))
-# print(complete_word("m____", "eeimkl"))
-# print(complete_word("m_____", "eeimkl"))
-# print(complete_word("____k", "eeimkl"))
-# print(complete_word("____k_", "eeimkl"))
-# print(complete_word("____r", "karfit"))
-# print(complete_word("_f___", "karfit"))
-# print(complete_word("_k___", "karfit"))
-# print(complete_word("_f___", "karfit"))
-# print(complete_word("___f_k", "karfit"))
-# print(complete_word("a___", "karfit"))
-# print(complete_word("e__i_", "iamtep"))
-# print(complete_word("_____k", "faktri"))
-# print(complete_word("__r_f", "faktri"))
-# print(complete_word("a_i_", "faktri"))
-#
-# print(complete_word("______", "bayram"))
-# print(complete_word("y__", "bayram"))
-# print(complete_word("b____", "bayram"))
-# print(complete_word("___a_", "bayram"))
-# print(complete_word("_a__", "bayram"))
-# print(complete_word("___a", "bayram"))
-# print(complete_word("__a_", "bayram"))
-#
-# print(complete_word("______", "tornak"))
-# print(complete_word("__k_", "tornak"))
-# print(complete_word("_____", "tornak"))
-#
-print(complete_word("_____", "miatsh"))
+print(complete_word("_______", "yccende"))
