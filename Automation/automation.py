@@ -2,7 +2,9 @@ import pyautogui as p
 import operator
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
-from Text_Recognition.find_given_letters import get_letters
+from Text_Recognition.find_given_letters import *
+from Automation.find_difference import *
+from Word_Finding.find_word import *
 import numpy as np
 import sys
 
@@ -13,12 +15,21 @@ p.FAILSAFE = True
 btn_daily_puzzle = p.locateOnScreen('Assets/daily_puzzle_button.png')
 block_empty = p.locateOnScreen("Assets/squareT.png")
 home_button = "Assets/home_button.png"
-img_path = "board.png"
+img_path = "Assets/board.png"
+board_prev_path = "Assets/board_prev.png"
+board, board_prev = [None] * 2
+x, y = [0] * 2
 
-x, y = tuple(map(operator.add, p.locateOnScreen(home_button)[:2], (0, 100)))
-board = p.screenshot(region=(x, y, 447, 670))
-# board.show()
-board.save("board.png")
+
+def set_gameboard():
+    global board
+    x, y = tuple(map(operator.add, p.locateOnScreen(home_button)[:2], (0, 100)))
+    board_prev = board
+    board = p.screenshot(region=(x, y, 447, 670))
+    # board.show()
+    board.save(img_path)
+    if board_prev is not None:
+        board_prev.save(board_prev_path)
 
 
 # display(board)
@@ -84,7 +95,6 @@ def detectLetterColor():
     return color_letter
 
 
-detectLetterColor()
 # calibrate()
 
 # def findGivenLetters():
@@ -103,7 +113,46 @@ def snap_ocr(x1, y1, x2, y2):
     pass
 
 
-def ocr(path):
-    get_letters(path)
+possible_words = []
+given_letters = ""
 
-# ocr(img_path)
+
+def ocr(path):
+    # get_letters(path, "given_letters")
+    get_letters(path, "revealed_letters")
+
+
+def play():
+    # compare(board_prev_path, img_path)
+    pass
+
+
+def getKeysByValue(dictOfElements, valueToFind):
+    listOfKeys = list()
+    listOfItems = dictOfElements.items()
+    for item in listOfItems:
+        if item[1] == valueToFind:
+            listOfKeys.append(item[0])
+    return listOfKeys
+
+
+def pick_letters(words, dict):
+    order = []
+    for word in words:
+        for i in range(len(word)):
+            order.append(getKeysByValue(dict, word[i]))
+    print(order)
+
+
+def main():
+    set_gameboard()
+    # detectLetterColor()
+    # ocr(img_path)
+    given_letters = get_letters(img_path, "given_letters")
+    possible_words.append(complete_word(['_' * len(x) for x in given_letters], given_letters))
+    print(possible_words[0])
+    # get_single_letters_locations()
+    pick_letters(possible_words[0], get_single_letters_locations())
+
+
+main()

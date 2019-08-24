@@ -85,16 +85,37 @@ six = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
 # print(dictCount)
 # print(dictCount.get(255))
 
-dict_letter_locations = {
-    "first": "{},{},{},{}".format(1166, 563, 55, 50),
-    "second": "{},{},{},{}".format(1240, 606, 55, 50),
-    "third": "{},{},{},{}".format(1240, 694, 55, 50),
-    "fourth": "{},{},{},{}".format(1166, 737, 55, 50),
-    "fifth": "{},{},{},{}".format(1087, 693, 55, 50),
-    "sixth": "{},{},{},{}".format(1087, 605, 55, 50)
-}
+# dict_letter_locations = {
+#     "first": "{},{},{},{}".format(1166, 563, 55, 50),
+#     "second": "{},{},{},{}".format(1240, 606, 55, 50),
+#     "third": "{},{},{},{}".format(1240, 694, 55, 50),
+#     "fourth": "{},{},{},{}".format(1166, 737, 55, 50),
+#     "fifth": "{},{},{},{}".format(1087, 693, 55, 50),
+#     "sixth": "{},{},{},{}".format(1087, 605, 55, 50)
+# }
+#
+# a,b,c,d,e,f = dict_letter_locations.values()
+# print(a)
+# print(b)
+# print(f)
 
-a,b,c,d,e,f = dict_letter_locations.values()
-print(a)
-print(b)
-print(f)
+# given_letters = "miaths"
+#
+# print([x for x in given_letters])
+# d = {}
+# for i,x in enumerate(given_letters, 1):
+#     d.update({"{}".format(i): "{}".format(x)})
+# print(d)
+
+
+def getKeysByValue(dictOfElements, valueToFind):
+    listOfKeys = list()
+    listOfItems = dictOfElements.items()
+    for item in listOfItems:
+        if item[1] == valueToFind:
+            listOfKeys.append(item[0])
+    return listOfKeys
+
+dc = {'1': 'M', '2': 'A', '3': 'S', '4': 'T', '5': '', '6': 'H', '': 'İ'}
+
+print(getKeysByValue(dc, '')[0])

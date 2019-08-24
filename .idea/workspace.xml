@@ -2,30 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb16870f-64bd-499a-9c5d-d85ec77adc01" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/Scrabble Solver.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Scrabble Solver.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.ipynb_checkpoints/01-Corner-Detection-checkpoint.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.ipynb_checkpoints/02-Edge-Detection-checkpoint.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.ipynb_checkpoints/03-Grid-Detection-checkpoint.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.ipynb_checkpoints/04-Contour-Detection-checkpoint.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.ipynb_checkpoints/06-Watershed-Algorithm-checkpoint.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.ipynb_checkpoints/07-Custom-Seeds-with-Watershed-Algo-checkpoint.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.ipynb_checkpoints/Template_Matching-checkpoint.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.ipynb_checkpoints/detect_squares-checkpoint.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/01-Corner-Detection.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/02-Edge-Detection.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/03-Grid-Detection.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-Contour-Detection.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/06-Watershed-Algorithm.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/07-Custom-Seeds-with-Watershed-Algo.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sandbox/Write/block.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sandbox/Write/block_heart.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sandbox/Write/detected_g2.png" beforeDir="false" afterPath="$PROJECT_DIR$/Sandbox/Write/detected_g2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sandbox/board_with_offset.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Sandbox/board_with_offset.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sandbox/color_detection.py" beforeDir="false" afterPath="$PROJECT_DIR$/Sandbox/color_detection.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Automation/automation.py" beforeDir="false" afterPath="$PROJECT_DIR$/Automation/automation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Automation/board.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Automation/board_orig.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Automation/thresh.png" beforeDir="false" afterPath="$PROJECT_DIR$/Automation/thresh.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Sandbox/sandbox2.py" beforeDir="false" afterPath="$PROJECT_DIR$/Sandbox/sandbox2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/squareT.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Text_Recognition/find_given_letters.py" beforeDir="false" afterPath="$PROJECT_DIR$/Text_Recognition/find_given_letters.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Text_Recognition/thresh.png" beforeDir="false" afterPath="$PROJECT_DIR$/Text_Recognition/thresh.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Word_Finding/find_word.py" beforeDir="false" afterPath="$PROJECT_DIR$/Word_Finding/find_word.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tasks.todo" beforeDir="false" afterPath="$PROJECT_DIR$/tasks.todo" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -42,12 +28,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="1164" />
-    <option name="y" value="30" />
-    <option name="width" value="781" />
-    <option name="height" value="1057" />
   </component>
   <component name="ProjectId" id="1OhOSasIabmhII5DbjU4RIIHXgj" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -80,7 +60,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.find_word">
     <configuration name="automation (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Scrabble Solver" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -94,6 +74,27 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Automation/automation.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="find_difference" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Scrabble Solver" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Automation" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Automation/find_difference.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -123,27 +124,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="find_given_letters" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Scrabble Solver" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Automation" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Automation/find_given_letters.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="find_word" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Scrabble Solver" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -157,27 +137,6 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Word_Finding/find_word.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="sandbox2" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Scrabble Solver" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Sandbox" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Sandbox/sandbox2.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -207,6 +166,36 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="sandbox2" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Scrabble Solver" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Sandbox" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Sandbox/sandbox2.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.find_word" />
+        <item itemvalue="Python.automation (1)" />
+        <item itemvalue="Python.find_given_letters (1)" />
+        <item itemvalue="Python.sandbox2" />
+        <item itemvalue="Python.find_difference" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -221,51 +210,12 @@
     </task>
     <servers />
   </component>
-  <component name="ToolWindowManager">
-    <frame x="1164" y="30" width="781" height="1057" extended-state="0" />
-    <layout>
-      <window_info id="Image Layers" />
-      <window_info id="Designer" />
-      <window_info id="UI Designer" />
-      <window_info id="Capture Tool" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" weight="0.25" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="bottom" id="Flutter Performance" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Palette" />
-      <window_info anchor="right" id="Theme Preview" />
-      <window_info anchor="right" id="Flutter Inspector" />
-      <window_info anchor="right" id="Maven" />
-      <window_info anchor="right" id="Capture Analysis" />
-      <window_info anchor="right" id="Palette&#9;" />
-      <window_info anchor="right" id="Flutter Outline" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-    </layout>
-  </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
             <State>
-              <option name="RECENTLY_FILTERED_USER_GROUPS">
-                <collection />
-              </option>
-              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-                <collection />
-              </option>
               <option name="COLUMN_ORDER" />
             </State>
           </value>
@@ -286,5 +236,21 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Automation/automation.py</url>
+          <line>130</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Automation/automation.py</url>
+          <line>139</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
